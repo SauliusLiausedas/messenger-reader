@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ chat }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{ chat }}</h1>
+                {% for message in chat.messages %}
+                    <p><b>[{{ message.timestamp|date }} | {{ message.author }}]:</b> {{ message.content }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
